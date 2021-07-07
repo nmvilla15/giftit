@@ -8,9 +8,15 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Gift Categories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% Category.all.each do |cat| %>
+            <li><a class="dropdown-item"><%= link_to cat.name, posts_path(category: cat.name) %></a></li>
+            <% end %>
+          </ul>
     </ul>
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
