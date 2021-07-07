@@ -5,6 +5,11 @@
   <%= @post.title %>
 </p>
 
+<p>
+  <strong>Category:</strong>
+  <%= @post.category.name %>
+</p>
+
 <div style="width:300px; height:auto">
   <%= image_tag(@post.image, style: "width:100%") %>
 </div>
