@@ -14,3 +14,8 @@
  *= require_self
  */
 @import "bootstrap";
+
+.navbar .navbar-brand b {
+  font-weight: bold;
+  color: #5bc0de;
+}
