@@ -17,4 +17,10 @@
   </div><!-- row -->
 </div>
 
-
+<% if current_user != @post.user_id %>
+      <%= link_to "Message #{@post.user.username}", conversations_path(sender_id: current_user, recipient_id: @post.user_id), method: 'post', class:"button is-link" %>
+    <% elsif current_user == @post.user_id  %>
+      <%= link_to "Conversations", conversations_path %>
+    <% else %>
+    <%= link_to "Sign up to message #{@post.user_id}", new_user_registration_path %>
+    <% end %>

@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   resources :users
   resources :categories
   resources :sessions
+  resources :posts
+
+  resources :conversations do
+    resources :messages
+  end
 
   root to: "posts#index"
-  resources :posts
   
 end
