@@ -1,40 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1 id="speakers" class="display-4 text-center my-5 text-muted">Gifts</h1>
+<h1 id="gifts" class="display-4 text-center my-5 text-muted">Gifts</h1>
+<p class="text-center">Note: You must be logged in to see full posts or to create a new gift.</p>
+<p class="text-center"><%= link_to "New Gift", new_post_path %></p>
 
 <div class="container ">
-  <div class="card-deck">
+  <div class="row">
     <% @posts.each do |post| %>
-      <div class="col-md-6 col-lg-4">
-        <div class="card mb-3">
-          <div class="card-img-top mb-3 mx-auto">
+      <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="card" >
+          <div class="card-body">
+            <h4 class="card-title"><%= post.title %></h4>
             <%= link_to image_tag(post.image, style:'width:100%') if post.image.attached? %>
-              <div class="card-body">
-                <h4 class="card-title"><%= post.title %></h4>
-                <p class="card-text"><%= truncate(post.description, length: 70) %></p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">
-                  <%= link_to 'See Full Post', post, class: "btn btn-info mx-auto d-block" %>
-                  <% if current_user %>
-                    <%= link_to 'Edit Post', edit_post_path(post) %>  |
-                    <%= link_to 'Destroy', post, method: :delete %>
-                  <% end %>
-                </small>
-              </div>
-            </div>
+            <p class="card-text"><%= truncate(post.description, length: 90) %></p>
+          </div>
+          <div class="card-footer">
+            <%= link_to 'See Full Post', post, class: "btn btn-info mx-auto d-block" %>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
-</div>
-<div class="container ">
-  <% if current_user %>
-    <p class="newgift text-center">Do you have study materials you would like to gift? Click <%= link_to 'New Gift', new_post_path %> to get started.</p>
-  <% else %>
-    <p class="text-center">Have study materials you would like to gift? Please <%= link_to "Sign Up", signup_path %> for an account. 
-    <br>
-    Already have an account? Please <%= link_to "Log In", login_path %> to post a new gift or edit/delete an existing one.</p>  
-  <% end %>
-<%= link_to "New Category", new_category_path %>
 </div>

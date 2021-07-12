@@ -17,5 +17,27 @@
 
 .navbar .navbar-brand b {
   font-weight: bold;
-  color: #5bc0de;
+  color: #78c2ad;
+}
+
+.navbar .bg-light {
+  color: #f7f7f7 !important;
+}
+
+.btn-info {
+  background-color: #78c2ad !important;
+}
+
+.message {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.message::after {
+  content: "";
+  clear: both;
+  display: table;
 }

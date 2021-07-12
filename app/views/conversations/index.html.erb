@@ -1,5 +1,7 @@
-<h1>My Inbox</h1>
-<h1>All Conversations:</h1>
+<div class="inboxcontainer">
+<h1 class="inbox text-center">My Inbox</h1>
+<hr>
+<h3>All Conversations:</h3>
 <% @conversations.each do |conversation| %>
  <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
   <% if conversation.sender_id == current_user.id %>
@@ -7,12 +9,10 @@
   <% else %>
    <% recipient = User.find(conversation.sender_id) %>
   <% end %>
-  <h3><%= link_to recipient.username, conversation_messages_path(conversation)%></h3>
+  <% unless current_user.id == recipient.id %>
+    <%= link_to recipient.username, conversation_messages_path(conversation)%>
+  <% end %>
  <% end %>
 <% end %>
-<h1>All Users:</h1>
-<% @user.each do |user| %>
- <% if user.id != current_user.id %><h3>
- <%= link_to user.username, conversations_path(sender_id: current_user.id, recipient_id: user.id), method: "post"%></h3>
- <% end %>
-<% end %>
+</div>
+
