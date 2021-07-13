@@ -12,7 +12,7 @@
           <div class="card-body">
             <h4 class="card-title"><%= post.title %></h4>
             <%= link_to image_tag(post.image, style:'width:100%') if post.image.attached? %>
-            <p class="card-text"><%= truncate(post.description, length: 90) %></p>
+            <p class="card-text"><%= truncate(post.description, length: 60) %></p>
           </div>
           <div class="card-footer">
             <%= link_to 'See Full Post', post, class: "btn btn-info mx-auto d-block" %>

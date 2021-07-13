@@ -2,8 +2,10 @@ class ConversationsController < ApplicationController
   before_action :authorize
 
   def index
-    @user = User.all
+    #@users = User.where.not(id: current_user.id)
+    @users = User.all
     @conversations = Conversation.all
+    #@conversations = Conversation.where("sender_id = ? OR recipient_id = ?", current_user.id, current_user.id)
   end
 
   def create
@@ -21,3 +23,4 @@ class ConversationsController < ApplicationController
       params.permit(:sender_id, :recipient_id)
     end
 end
+
