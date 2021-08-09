@@ -1,13 +1,18 @@
-<h1>Log In</h1>
-
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :username %><br />
-    <%= text_field_tag :username, params[:username] %>
+<div class="loginContainer">
+<h1 class="login text-center">Log In</h1>
+  <div class="d-flex justify-content-center">
+    <%= form_tag sessions_path do %>
+      <div class="field">
+        <%= label_tag :username %><br />
+        <%= text_field_tag :username, params[:username] %>
+      </div>
+      <div class="field">
+        <%= label_tag :password %><br />
+        <%= password_field_tag :password %>
+      </div>
+      <div class="actions">
+        <%= submit_tag "Log In", class: "btn btn-info mt-1" %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions"><%= submit_tag "Log In" %></div>
-<% end %>
+</div>

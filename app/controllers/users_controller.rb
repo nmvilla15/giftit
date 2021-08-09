@@ -1,8 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
 
+  def index
+    @user = User.all
+  end
+
+  def show
+  end
+
   def new
     @user = User.new
+  end
+
+  def edit
   end
 
   def create
@@ -15,12 +25,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-  end
-
-  def edit
-  end
-
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -31,6 +35,12 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @user.destroy
+    flash.notice = "User was successfully destroyed."
+    redirect_to users_path
   end
 
   private

@@ -1,16 +1,29 @@
-<h1 class="title is-4">Message <%= @conversation.recipient.username %></h1>
 
-
-<% @messages.each do |message| %>
- <% if message.body %>
-  <% user = User.find(message.user_id) %>
-  <%= user.username %>: 
-  <%= message.body %>
- <% end %>
-<% end %>
+<section>
+  <% @messages.each do |message| %>
+    <% if message.body %>
+      <% user = User.find(message.user_id) %>
+      <article class="messages">
+        <div class="message-body">
+          <div class="inline-block"><strong><%= user.username %></strong>
+          <div class="block">
+            <div><%= message.body %></div>
+          </div>
+        </div>
+      </article>
+    <% end %>
+  <% end %>
+</section>
 
 <%= form_for [@conversation, @message] do |f| %>
- <%= f.text_area :body %>
- <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
- <%= f.submit "Send Reply" %>
+  <div class="field">
+    <%= f.text_area :body, placeholder: "Your message", rows: 5, style: 'width:100%;' %>
+  </div>
+  <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+  <%= f.submit "Send" %>
 <% end %>
+
+
+
+
+
