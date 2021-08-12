@@ -1,0 +1,38 @@
+
+<%= current_user.password %>
+
+<div class="card">
+  <h4 class="card-header">Edit Profile </h4>
+  <div class="card-body">User Name:
+    <%= current_user.username %>
+    
+    <div class="field form-group">User Email:
+      <%= current_user.email %>
+    </div> <br/>
+    
+
+    <div class="actions">
+      
+    </div>
+    
+  </div>
+</div><br/>
+
+<td><%= link_to 'Edit', edit_user_path, class:"btn btn-dark" %></td>
+ <td><%= link_to "Delete account", @user, method: :delete, data: { confirm: "You sure?" } %></td>
+
+
+
+
+
+<div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Unhappy?</h5>
+    
+      </div>
+</div><br/>
+
+<%= link_to "Back", :back, class:"btn btn-dark" %>
+
+
+

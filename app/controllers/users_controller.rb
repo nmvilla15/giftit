@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
     @user = User.all
   end
 
   def show
+    
   end
 
   def new
@@ -39,8 +40,10 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    flash.notice = "User was successfully destroyed."
-    redirect_to users_path
+    respond_to do |format|
+      format.html { redirect_to logout, notice: "Show was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
   private
