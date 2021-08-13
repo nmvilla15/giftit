@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    @user = User.find(params[:id])
   end
 
   def new
@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def create
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to logout, notice: "Show was successfully destroyed." }
+      format.html { redirect_to home_index_url, notice: "Show was successfully destroyed." }
       format.json { head :no_content }
     end
   end
