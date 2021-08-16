@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @user = User.all
@@ -14,7 +14,10 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    if !logged_in? || !@user
+      redirect_to root_path
+    end
+    #@user = User.find(params[:id])
   end
 
   def create
@@ -41,10 +44,13 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to home_index_url, notice: "Show was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to root_path
+
+    #@user.destroy
+    #respond_to do |format|
+     # format.html { redirect_to home_index_url, notice: "Show was successfully destroyed." }
+      #format.json { head :no_content }
+    #end
   end
 
   private

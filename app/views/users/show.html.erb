@@ -1,4 +1,4 @@
-<div class="card">
+<div class="container-fluid">
   <h4 class="card-header">My Profile </h4>
   <div class="card-body">User Name:
     <%= current_user.username %>
@@ -8,17 +8,18 @@
     </div> <br/>
 
     <div class="field form-group">User's Password:
-      <%= current_user.password %>
+      <%= "*" %>
     </div> <br/>
     
+
+      <td><%= link_to 'Edit', edit_user_path, class:"btn btn-dark" %></td>
+      <td><%= link_to "Delete account", @user, class:"btn btn-dark", method: :delete, data: { confirm: "You sure?" } %></td>
+
+      <%= link_to "Back", home_index_path, class:"btn btn-dark" %>
+
+
   </div>
 </div><br/>
-
-<td><%= link_to 'Edit', edit_user_path, class:"btn btn-dark" %></td>
- <td><%= link_to "Delete account", @user, class:"btn btn-dark", method: :delete, data: { confirm: "You sure?" } %></td>
-
-<%= link_to "Back", home_index_path, class:"btn btn-dark" %>
-
 
 
 
