@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'delete', to: 'users#destroy', as: 'delete'
-  #et '/users/:id' => 'users#show', as: :user
 
   resources :users
   resources :categories
