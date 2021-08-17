@@ -44,8 +44,9 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
+    session[:user_id] = nil
     redirect_to root_path
-
+    
     #@user.destroy
     #respond_to do |format|
      # format.html { redirect_to home_index_url, notice: "Show was successfully destroyed." }
