@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :messages
   has_many :conversations
+
+  
 end
