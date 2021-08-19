@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @user = User.all
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def create
@@ -39,8 +41,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    flash.notice = "User was successfully destroyed."
-    redirect_to users_path
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
   private
