@@ -5,7 +5,7 @@
       <% user = User.find(message.user_id) %>
       <article class="messages">
         <div class="message-body">
-          <div class="inline-block"><strong><%= user.username %></strong>
+          <div class="inline-block"><strong><%= user.username %></strong> <%= message.sent_time %>
           <div class="block">
             <div><%= message.body %></div>
           </div>
