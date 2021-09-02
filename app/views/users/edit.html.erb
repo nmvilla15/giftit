@@ -1,15 +1,11 @@
 <h3>Update My Profile</h3>
 
-<table class="table table-striped">
-  <div class="container-fluid">
-    <%= form_with model: @user do |form| %>
+<%= form_with model: @user do |form| %>
       <br/><%= form.text_field :username, placeholder: "User Name" %> <br/>
       <br/><%= form.text_field :email, placeholder: "Email" %> <br/>
       <br/><%= form.text_field :password, placeholder: "Password" %> <br/>
       <br/><%= form.submit %>
-    <% end %>
-</div>
-</table>
+<% end %>
 
 
 
