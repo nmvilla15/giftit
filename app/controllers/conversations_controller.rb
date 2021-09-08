@@ -2,10 +2,9 @@ class ConversationsController < ApplicationController
   before_action :authorize
 
   def index
-    #@users = User.where.not(id: current_user.id)
     @users = User.all
     @conversations = Conversation.all
-    #@conversations = Conversation.where("sender_id = ? OR recipient_id = ?", current_user.id, current_user.id)
+    @conversations.check_empty_messages
   end
 
   def create
@@ -18,9 +17,14 @@ class ConversationsController < ApplicationController
     redirect_to conversation_messages_path(@conversation)
   end
 
+  def destroy
+    @conversation.destroy
+  end
+
   private
     def conversation_params
       params.permit(:sender_id, :recipient_id)
     end
 end
 
+              
