@@ -12,6 +12,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    @posts = Post.where("title LIKE ?", "%" + params[:q] + "%")
+  end 
+
   # GET /posts/1 or /posts/1.json
   def show
   end
