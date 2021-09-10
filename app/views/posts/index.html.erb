@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1 id="gifts" class="display-4 text-center my-5 text-muted">Gifts</h1>
+
 <p class="text-center">Note: You must be logged in to see full posts or to create a new gift.</p>
 <p class="text-center"><%= link_to "New Gift", new_post_path %></p>
+<p class="text-center">
+<input type="text" placeholder="Search" aria-label="Search">
+  <button class="btn-outline-warning btn-rounded btn-sm my-0" type="submit">Search</button>
+</p>
 
 <div class="container ">
   <div class="row">
