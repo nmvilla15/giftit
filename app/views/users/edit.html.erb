@@ -1,10 +1,11 @@
-<h3>Update My Profile</h3>
+<h3>Manage Profile</h3>
 
 <%= form_with model: @user do |form| %>
-      <br/><%= form.text_field :username, placeholder: "User Name" %> <br/>
-      <br/><%= form.text_field :email, placeholder: "Email" %> <br/>
-      <br/><%= form.text_field :password, placeholder: "Password" %> <br/>
-      <br/><%= form.submit %>
+      <br/>Username: <%= form.text_field :username %> <br/>
+      <br/>Profile Picture: <%= form.file_field :avatar %> <br/>
+      <br/>Email Address: <%= form.text_field :email %> <br/>
+      <br/>Password: <%= form.text_field :password, placeholder: "Type here to change" %> <br/>
+      <br/><%= form.submit "Update Profile" %>
 <% end %>
 
 

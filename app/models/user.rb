@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_one_attached :avatar, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true, length: { in: 3..10 }
   validates :email, presence: true, uniqueness: true
