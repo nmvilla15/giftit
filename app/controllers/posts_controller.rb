@@ -10,11 +10,9 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
-  end
 
-  def search
-    @posts = Post.where("title LIKE ?", "%" + params[:q] + "%")
-  end 
+    @posts = Post.search(params[:search])
+  end
 
   # GET /posts/1 or /posts/1.json
   def show

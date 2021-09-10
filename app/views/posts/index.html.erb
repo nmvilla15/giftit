@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<form class="d-inline-flex p-2" action="/search">
-   <input class="form-control me-2" name="q" type="search" placeholder="Search for Gift" aria-label="Search">
-   <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
+<%= form_tag posts_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search42"  %>
+<% end %>
 
 <h1 id="gifts" class="display-4 text-center my-5 text-muted">Gifts</h1>
 
