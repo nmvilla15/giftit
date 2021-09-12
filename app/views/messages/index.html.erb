@@ -3,7 +3,7 @@
     <% user = User.find(message.user_id) %>
       <article class="messages">
         <div class="message-body">
-          <%= image_tag(user.avatar, class: 'rounded-circle', style: 'width:5%') %> 
+          <%= avatar_for(user) %> 
           <div class="inline-block"><strong><%= user.username %></strong> <small class="text-muted"><%= message.sent_time %></small>
             <div><%= message.body %></div>
           </div>

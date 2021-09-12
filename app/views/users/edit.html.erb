@@ -4,7 +4,7 @@
       <br/>Username: <%= form.text_field :username %> <br/>
       <br/>Email Address: <%= form.text_field :email %> <br/>
       <br/>Password: <%= form.text_field :password, placeholder: "Type here to change" %> <br/><br/>
-      <%= image_tag(@user.avatar, class: 'rounded-circle', style: 'width:7%') %>
+      <%= avatar_for(@user) %>
       <br/>Change Profile Picture: <%= form.file_field :avatar %> <br/>
       <br/><%= form.submit "Update Profile" %>
       <br/><%= button_to "Back", user_path %>
