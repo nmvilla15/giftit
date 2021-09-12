@@ -1,5 +1,8 @@
 <div class="container-fluid">
-  <h4 class="card-header">My Profile </h4>
+  <h4 class="card-header">My Profile </h4><br>
+
+  <%= image_tag(@user.avatar, class: 'rounded-circle', style: 'width:10%') %>
+
   <div class="card-body">Username:
     <%= current_user.username %>
     <div class="field form-group">Email Address:
