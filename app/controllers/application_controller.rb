@@ -12,6 +12,6 @@ private
   end
     
   def authorize
-    redirect_to login_url, alert: "You must be logged/signed up to access" if current_user.nil?
+    redirect_to login_url, alert: "You must be logged in to access" if current_user.nil?
   end
 end
