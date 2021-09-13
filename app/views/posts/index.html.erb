@@ -1,29 +1,30 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+
 
 <%= form_tag posts_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search"  %>
+<div class="input-group">
+  <%= text_field_tag :search, params[:search], class:"form-control"%>
+  <%= submit_tag "Search", class:"btn btn-info", id:"button-addon2"  %>
+</div>
 <% end %>
 
-<h1 id="gifts" class="display-4 text-center my-5 text-muted">Gifts</h1>
+<h1 id="gifts" class="display-4 text-center text-muted">Gifts</h1>
 
-<p class="text-center">Note: You must be logged in to see full posts or to create a new gift.</p>
-<p class="text-center"><%= link_to "New Gift", new_post_path %></p>
-<div class="container ">
-  <div class="row">
+<!-- <p class="text-center">Note: You must be logged in to see full posts or to create a new gift.</p> -->
+<p class="text-center"><%= link_to "Create New Gift", new_post_path, class:"btn btn-info"%></p>
+
+  <div class="card-group">
     <% @posts.each do |post| %>
-      <div class="col-sm-6 col-md-6 col-lg-3">
         <div class="card" >
           <div class="card-body">
             <h4 class="card-title"><%= post.title %></h4>
-            <%= link_to image_tag(post.image, style:'width:100%') if post.image.attached? %>
-            <p class="card-text"><%= truncate(post.description, length: 60) %></p>
+            <%= link_to image_tag(post.image, class:"card-img-top") if post.image.attached? %>
+            <p class="card-text"><%= truncate(post.description, length: 120) %></p>
           </div>
           <div class="card-footer">
             <%= link_to 'See Full Post', post, class: "btn btn-info mx-auto d-block" %>
           </div>
         </div>
-      </div>
     <% end %>
   </div>
-</div>

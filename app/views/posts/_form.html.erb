@@ -1,3 +1,8 @@
+
+<div class="giftContainer  mt-5 col-3">
+
+  <h1 class="text-center sign mb-3">New Gift</h1>
+  <div class="d-flex justify-content-center ">
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -10,28 +15,16 @@
       </ul>
     </div>
   <% end %>
+    <%= form.text_field :title, class:"form-control mb-3", placeholder: "Title" %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <%= form.collection_select :category_id, Category.all, :id, :name, {include_blank:true}, {class:"form-select mb-3"} %>
 
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.collection_select :category_id, Category.all,:id,:name, include_blank: true %>
-  </div>
+    <%= form.text_area :description, rows: 4 , class:"form-control mb-3", placeholder:"Provide description"%>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, rows: 6, style: 'width:50%;' %>
-  </div>
+    <%= form.file_field :image, class:"form-control mb-3"%>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit "Create Post", class: "btn btn-info mt-1 form-control mb-3" %>
+<%= link_to 'Go Back', posts_path, class: "d-flex justify-content-end no_underscore " %>
 <% end %>
+</div>
+</div>
