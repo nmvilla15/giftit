@@ -8,9 +8,12 @@ class PostsController < ApplicationController
       @category = Category.find_by_name(params[:category])
       @posts = Post.where(category: @category)
     else
-      @posts = Post.all
+      @posts = Post.paginate(:page => params[:page], :per_page => 10)
     end
     @posts = Post.search(params[:search])
+    @posts  = Post.paginate(:page => params[:page], :per_page=>5)
+
+
   end
 
   # GET /posts/1 or /posts/1.json
