@@ -1,19 +1,16 @@
-
-<section>
-  <% @messages.each do |message| %>
-    <% if message.body %>
-      <% user = User.find(message.user_id) %>
+<% @messages.each do |message| %>
+  <% if message.body %>
+    <% user = User.find(message.user_id) %>
       <article class="messages">
         <div class="message-body">
-          <div class="inline-block"><strong><%= user.username %></strong>  Sent: <%= message.sent_time %>
-          <div class="block">
+          <%= avatar_for(user) %> 
+          <div class="inline-block"><strong><%= user.username %></strong> <small class="text-muted"><%= message.sent_time %></small>
             <div><%= message.body %></div>
           </div>
         </div>
       </article>
-    <% end %>
   <% end %>
-</section>
+<% end %>
 
 <%= form_for [@conversation, @message] do |f| %>
   <div class="field">

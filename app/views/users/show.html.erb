@@ -7,10 +7,24 @@
       <%= current_user.email %>
     </div>
     <div class="text-center mt-3">
+<div class="container-fluid">
+  <h4 class="card-header">My Profile </h4><br>
 
+  <%= avatar_for(@user) %>
 
-      <%= link_to 'Edit', edit_user_path, class:"btn btn-secondary" %>
-      <%= link_to "Delete account", @user, class:"btn btn-secondary", method: :delete, data: { confirm: "You sure?" } %>
+  <div class="card-body">Username:
+    <%= current_user.username %>
+    <div class="field form-group">Email Address:
+      <%= current_user.email %>
+    </div> <br/>
+
+    <div class="field form-group">Password:
+      <%= "*****" %>
+    </div> <br/>
+    
+
+      <td><%= link_to 'Edit', edit_user_path, class:"btn btn-secondary" %></td>
+      <td> <%= link_to "Delete account", @user, class:"btn btn-secondary", method: :delete, data: { confirm: "Are you sure?" } %></td>
       <%= link_to "Back", home_index_path, class:"btn btn-secondary" %>
         </div>
   </div>

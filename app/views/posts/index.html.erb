@@ -14,6 +14,9 @@
 <!-- <p class="text-center">Note: You must be logged in to see full posts or to create a new gift.</p> -->
 <p class="text-center"><%= link_to "Create New Gift", new_post_path, class:"btn btn-info"%></p>
 
+  
+  <%= will_paginate @posts, :page_links => false  %>  
+
   <div class="card-group">
     <% @posts.each do |post| %>
         <div class="card" >
@@ -28,3 +31,5 @@
         </div>
     <% end %>
   </div>
+  <%= will_paginate @posts, :page_links => false  %>
+

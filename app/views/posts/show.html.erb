@@ -24,7 +24,7 @@
       <br /><br />
 
     <div class="converstations text-center">
-      <% if current_user.username != @post.user.username %>
+      <% if current_user.id != @post.user.id %>
           <%= link_to "Message #{@post.user.username}", conversations_path(sender_id: current_user, recipient_id: @post.user_id), method: 'post', class:"btn btn-info mx-auto d-inline" %>
         <% elsif current_user.username == @post.user.username  %>
           <%= link_to "My Conversations", conversations_path %>
