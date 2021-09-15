@@ -1,3 +1,12 @@
+<div class="container mt-5">
+  <h2 class="list-group-item list-group-item-secondary text-center">My Profile </h2>
+  <div class="container">User Name:
+    <%= current_user.username %>
+
+    <div class="field form-group">User Email:
+      <%= current_user.email %>
+    </div>
+    <div class="text-center mt-3">
 <div class="container-fluid">
   <h4 class="card-header">My Profile </h4><br>
 
@@ -14,15 +23,9 @@
     </div> <br/>
     
 
-      <td><%= link_to 'Edit', edit_user_path, class:"btn btn-dark" %></td>
-      <td><%= link_to "Delete Account", @user, class:"btn btn-dark", method: :delete, data: { confirm: "Are you sure?" } %></td>
-
-      <%= link_to "Back", home_index_path, class:"btn btn-dark" %>
-
-
+      <td><%= link_to 'Edit', edit_user_path, class:"btn btn-secondary" %></td>
+      <td> <%= link_to "Delete account", @user, class:"btn btn-secondary", method: :delete, data: { confirm: "Are you sure?" } %></td>
+      <%= link_to "Back", home_index_path, class:"btn btn-secondary" %>
+        </div>
   </div>
-</div><br/>
-
-
-
-
+</div>
