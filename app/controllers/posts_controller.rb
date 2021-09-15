@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authorize, only: [:edit, :update, :destroy]
+  before_action :authorize, only: [:edit, :update, :destroy, :show, :new]
 
   # GET /posts or /posts.json
   def index
@@ -10,7 +10,6 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
-
     @posts = Post.search(params[:search])
   end
 
