@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Finalv2</title>
+    <title>GiftIt</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,9 +11,7 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    <% if !flash[:alert].nil? %>
-      <p class="my_alert"><%= flash[:alert] %></p>
-    <% end %>
+      <%= flash_messages %>
     <%= yield %>
 
   </body>
