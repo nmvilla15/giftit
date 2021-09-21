@@ -12,14 +12,16 @@
       <%= link_to 'Back', posts_path, class: "btn btn-info mx-auto d-inline" %>
     </div>
   
-
+    
     <div class="col-3">
+    <% if current_user.id == @post.user.id %>
       <div class="authoractions">
-      Gift author actions: 
-        <%= link_to 'Edit', edit_post_path(@post) %> | 
-        <%= link_to 'Delete Gift', @post, method: :delete, data: {confirm: "Are you sure you want to delete this gift?"} %>
-      </div>
-      <br /><br />
+        Gift author actions: 
+          <%= link_to 'Edit', edit_post_path(@post) %> | 
+          <%= link_to 'Delete Gift', @post, method: :delete, data: {confirm: "Are you sure you want to delete this gift?"} %>
+        </div>
+      <% end %>
+        <br/>
 
     <div class="converstations text-center">
       <% if current_user.id != @post.user.id %>
