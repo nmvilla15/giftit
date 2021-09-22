@@ -10,9 +10,8 @@
 
 <h1 id="gifts" class="display-4 text-center text-muted">Gifts</h1>
 
-<!-- <p class="text-center">Note: You must be logged in to see full posts or to create a new gift.</p> -->
+<% if @posts.present? %>
 <p class="text-center"><%= link_to "Create New Gift", new_post_path, class:"btn btn-info"%></p>
-
   
   <%= will_paginate @posts, :page_links => false  %>  
 
@@ -30,5 +29,10 @@
         </div>
     <% end %>
   </div>
-  <%= will_paginate @posts, :page_links => false  %>
 
+  <%= will_paginate @posts, :page_links => false  %>
+<% else %>
+  <h5 class="text-center"> Sorry, no Gifts have been posted.</h5>
+  <p class="text-center">Do you have a resource you would like to gift? Please click the button below to get started.</p>
+  <p class="text-center"><%= link_to "Post a Gift", new_post_path, class:"btn btn-info"%></p>
+<% end %>
