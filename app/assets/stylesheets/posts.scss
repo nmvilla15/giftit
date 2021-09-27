@@ -21,30 +21,73 @@
   background: #f7f7f7;
 }
 
-.card {
-  margin: 10px !important;
-  height: 70vh;
-  width: auto;
-}
+
 
 .giftContainer {
   border: 1px solid #78c2ad;
-  background: #FAD5D6;
+  background: #fddcd7 ;
   border-radius: 10px;
   width: 375px;
-  height: 500px;
   padding: 5px;
   margin: auto;
 }
 
 .no_underscore{
-  color: #acacac;
-  text-decoration: none;
-  font-weight: bold;
+  color: #acacac ;
+  text-decoration: none ;
+  font-weight: bold ;
 }
 
 .no_underscore:hover{
   color: #4a4a4a;
   text-decoration: none;
   font-weight: bold;
+}
+
+.no_underscore_white{
+  color: #ffffff ;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.no_underscore_white:hover{
+  color: #FDDCD7 ;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
+
+.previous_page {
+  display: flex;
+  justify-content: space-between;
+  color: #acacac ;
+  text-decoration: none ;
+  font-weight: bold ;
+}
+
+.previous_page:hover {
+  color: #000000  ;
+  text-decoration: none ;
+  font-weight: bold ;
+}
+
+.next_page {
+  display: flex;
+  justify-content: space-between;
+  color: #acacac ;
+  text-decoration: none ;
+  font-weight: bold ;
+}
+
+.next_page:hover {
+  display: flex;
+  justify-content: space-between;
+  color: #000000  ;
+  text-decoration: none ;
+  font-weight: bold ;
 }

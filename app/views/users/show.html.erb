@@ -1,31 +1,16 @@
-<div class="container mt-5">
-  <h2 class="list-group-item list-group-item-secondary text-center">My Profile </h2>
-  <div class="container">User Name:
-    <%= current_user.username %>
-
-    <div class="field form-group">User Email:
-      <%= current_user.email %>
-    </div>
-    <div class="text-center mt-3">
-<div class="container-fluid">
-  <h4 class="card-header">My Profile </h4><br>
-
+<div class="signupContainer mt-5 text-center">
+  <h2 class="sign mb-5 ">My Profile</h2>
   <%= avatar_for(@user) %>
-
   <div class="card-body">Username:
     <%= current_user.username %>
     <div class="field form-group">Email Address:
       <%= current_user.email %>
     </div> <br/>
-
     <div class="field form-group">Password:
       <%= "*****" %>
     </div> <br/>
-    
-
-      <td><%= link_to 'Edit', edit_user_path, class:"btn btn-secondary" %></td>
-      <td> <%= link_to "Delete account", @user, class:"btn btn-secondary", method: :delete, data: { confirm: "Are you sure?" } %></td>
-      <%= link_to "Back", home_index_path, class:"btn btn-secondary" %>
+      <td><%= link_to 'Edit', edit_user_path, class:"btn btn-info" %></td>
+      <td> <%= link_to "Delete account", @user, class:"btn btn-info", method: :delete, data: { confirm: "Are you sure?" } %></td>
+      <%= link_to "Back", home_index_path, class:"btn btn-info" %>
         </div>
   </div>
-</div>

@@ -1,14 +1,17 @@
-<h3>Manage Profile</h3>
+<div class="signupContainer mt-5">
+<h2 class="sign text-center mb-3">Manage profile</h2>
 
 <%= form_with model: @user do |form| %>
-      <br/>Username: <%= form.text_field :username %> <br/>
-      <br/>Email Address: <%= form.text_field :email %> <br/>
-      <br/>Password: <%= form.text_field :password, placeholder: "Type here to change" %> <br/><br/>
-      <%= avatar_for(@user) %>
-      <br/>Change Profile Picture: <%= form.file_field :avatar %> <br/>
-      <br/><%= form.submit "Update Profile" %>
-      <br/><%= button_to "Back", user_path %>
+<div class="m-3">
+  <div class="text-center mb-3"><%= avatar_for(@user)%></div>
+  Change Profile Picture: <%= form.file_field :avatar, class:"form-control mb-3"%>
+
+      Username:<%= form.text_field :username, class:"form-control mb-3"%>
+      Email Address: <%= form.text_field :email, class:"form-control mb-3" %>
+      Password: <%= form.text_field :password, class:"form-control mb-3", placeholder: "Type here to change" %>
+
+      <%= form.submit "Update Profile", class: "btn btn-info mt-1 mb-3 form-control" %>
+      <%= button_to "Back", user_path , class: "btn btn-info mt-1 mb-2 form-control"%>
 <% end %>
-
-
-
+</div>
+</div>
