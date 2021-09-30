@@ -16,9 +16,9 @@
 
       <%= f.text_field :username, class:"form-control mb-3", placeholder: "Username" %>
       <%= f.text_field :email, class:"form-control mb-3", placeholder: "Email" %>
-      <%= f.password_field :password, class:"form-control mb-3", placeholder: "Password" %>
+      <%= f.password_field :password, class:"form-control mb-3", placeholder: "Password (must be at least 6 characters)" %>
       <%= f.password_field :password_confirmation, class:"form-control mb-3", placeholder: "Confirm Password" %>
-      <%= f.file_field :avatar, class:"form-control mb-3"%>
+     <%= f.file_field :avatar, :title => "Upload New", class:"form-control mb-3"%>
       <%= f.submit "Sign Up", class: "btn btn-info mt-1 mb-3 form-control" %>
   <% end %>
   </div>
