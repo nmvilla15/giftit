@@ -1,9 +1,9 @@
 <div class="signupContainer mt-5">
 <h1 class="sign text-center mb-3">Sign Up</h1>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center m-3">
   <%= form_for @user do |f| %>
     <% if @user.errors.any? %>
-      <div class="error_messages">
+      <div class="error_messages ">
         <h2>Form is invalid</h2>
         <ul>
           <% @user.errors.full_messages.each do |message| %>
@@ -13,12 +13,13 @@
       </div>
     <% end %>
 
-      <%= f.file_field :avatar%>
+
       <%= f.text_field :username, class:"form-control mb-3", placeholder: "Username" %>
       <%= f.text_field :email, class:"form-control mb-3", placeholder: "Email" %>
-      <%= f.password_field :password,  class:"form-control mb-3", placeholder: "Password" %>
+      <%= f.password_field :password, class:"form-control mb-3", placeholder: "Password (must be at least 6 characters)" %>
       <%= f.password_field :password_confirmation, class:"form-control mb-3", placeholder: "Confirm Password" %>
-      <%= f.submit "Sign Up", class: "btn btn-info mt-1 form-control" %>
+     <%= f.file_field :avatar, :title => "Upload New", class:"form-control mb-3"%>
+      <%= f.submit "Sign Up", class: "btn btn-info mt-1 mb-3 form-control" %>
   <% end %>
   </div>
 </div>

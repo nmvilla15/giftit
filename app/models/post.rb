@@ -8,7 +8,7 @@ class Post < ApplicationRecord
     validates_associated :user
 
     def self.search(search)
-        if search 
+        if search
             where(" lower(title)  LIKE ?", "%#{search}%")
         else
             all

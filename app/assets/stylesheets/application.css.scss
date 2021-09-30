@@ -14,24 +14,31 @@
  *= require_self
  */
 @import "bootstrap";
-
-.navbar .navbar-brand b {
-  font-weight: bold;
-  color: #78c2ad;
+.margin-bottom {
+ margin-bottom: 75px !important;
 }
+// .navbar{
+//   font-weight: bold !important;
+//   color: #78c2ad !important;
+// }
 
-.navbar .bg-light {
-  color: #f7f7f7 !important;
+.bg-light {
+  background-color: #f7f7f7 !important;
 }
 
 .btn-info {
   background-color: #78c2ad !important;
+
+}
+find
+.btn-secondary {
+  background-color: #78c2ad !important;
 }
 
-.btn-secondary {
-  background-color: #f3969a !important;
+.btn-rose {
+  background-color: #fddcd7 !important;
 }
 
 .list-group-item-secondary {
-  background-color: #f3969a !important;
+  background-color: #fddcd7  !important;
 }

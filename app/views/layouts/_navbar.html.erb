@@ -1,36 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-  <a class="navbar-brand" href="/"><%= image_tag("GiftIt.jpeg", style: "width: 75px; height: 70px;")%></a>
-  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon">asffasjhfasfasnjfnka sjnfkajsnfaksjfnasnakjs</span>
-  </button> Delete if not needed, i dont know why this button is here. -->
-  <div class="collapse navbar-collapse d-flex justify-content-between " id="navbarNav">
-    <ul class="navbar-nav col-10">
+<nav class="bg-light sticky-top px-3">
+  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" id="navbarNav">
+    <a class="" href="/"><%= image_tag("GiftIt.jpeg", style: "width: 75px; height: 35px;")%></a>
+    <ul class="nav me-auto">
       <li class="nav-item">
-        <a class="nav-link" href="/posts#index">Gifts</a>
+        <a class="nav-link fs-5 text-muted" href="/posts#index">Gifts</a>
       </li>
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <li class="nav-item dropdown text-muted">
+          <a class="nav-link dropdown-toggle fs-5 text-muted" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Gift Categories
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <% Category.all.each do |cat| %>
-            <li><a class="dropdown-item"><%= link_to cat.name, posts_path(category: cat.name), class:"nav-link text-center" %></a></li>
+             <li><a class="dropdown-item"><%= link_to cat.name, posts_path(category: cat.name) %></a></li>
             <% end %>
           </ul>
     </ul>
 
-    <ul class="navbar-nav col-2 text-center d-flex justify-content-center ">
+    <ul class="nav text-center d-flex justify-content-center ">
       <li class="nav-item dropdown">
           <% if current_user  %>
-          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Hi, <strong><%= current_user.username %> <br>Account</strong></a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "My Profile", user_path(current_user.id), class:"nav-link" %>
-            <%= link_to "My Conversations", conversations_path, class:"nav-link" %>
-            <%= link_to "Log Out", logout_path, class:"nav-link" %>
+          <ul class="dropdown-menu text-muted" aria-labelledby="navbarDropdown">
+              <li class="dropdown-item"><%= link_to "My Profile", user_path(current_user.id), class:"nav-link text-muted" %></li>
+              <li class="dropdown-item"><%= link_to "My Conversations", conversations_path, class:"nav-link text-muted" %></li>
+              <li class="dropdown-item"><%= link_to "Log Out", logout_path, class:"nav-link text-muted" %></li>
           <% else %>
-            <%= link_to "Log In", login_path, class: "btn btn-info" %>
-            <%= link_to "Sign Up", signup_path, class: "btn btn-info" %>
+            <%= link_to "Log In", login_path, class: "btn btn-sm btn-info" %>
+            <%= link_to "Sign Up", signup_path, class: "btn btn-sm btn-info" %>
           <% end %>
       </li>
     </ul>
