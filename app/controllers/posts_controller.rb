@@ -7,10 +7,11 @@ class PostsController < ApplicationController
     if params.has_key?(:category)
       @category = Category.find_by_name(params[:category])
       @posts = Post.where(category: @category)
+    elsif params.has_key?(:search)
+      @posts = Post.search(params[:search])
     else
       @posts = Post.all
     end
-    @posts = Post.search(params[:search])
   end
 
   # GET /posts/1 or /posts/1.json
