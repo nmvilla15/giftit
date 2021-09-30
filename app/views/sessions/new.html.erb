@@ -1,6 +1,6 @@
-<div class="loginContainer mt-5">
+<div class="loginContainer mt-5 col-2">
 <h1 class="login text-center mb-3">Log In</h1>
-  <div class="d-flex justify-content-center ">
+  <div class="m-3">
     <%= form_tag sessions_path do %>
         <%= text_field_tag :username, params[:username], class:"form-control mb-3", placeholder: "Username" %>
         <%= password_field_tag :password, params[:password], class:"form-control mb-3", placeholder: "Password" %>

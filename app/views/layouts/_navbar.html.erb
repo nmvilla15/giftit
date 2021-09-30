@@ -1,6 +1,6 @@
 <nav class="bg-light sticky-top px-3">
   <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" id="navbarNav">
-    <a class="" href="/"><%= image_tag("GiftIt.jpeg", style: "width: 75px; height: 35px;")%></a>
+    <a class="" href="/"><%= image_tag("GiftIt.jpeg", style: "width: 75px; height: 40px;")%></a>
     <ul class="nav me-auto">
       <li class="nav-item">
         <a class="nav-link fs-5 text-muted" href="/posts#index">Gifts</a>
@@ -11,7 +11,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <% Category.all.each do |cat| %>
-             <li><a class="dropdown-item"><%= link_to cat.name, posts_path(category: cat.name) %></a></li>
+            <li class="dropdown-item "><%= link_to cat.name, posts_path(category: cat.name), class:"nav-link text-center text-muted" %></li>
             <% end %>
           </ul>
     </ul>
