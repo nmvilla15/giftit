@@ -6,10 +6,13 @@
 
   <%= text_field_tag :search, params[:search], class:"form-control"%>
   <%= submit_tag "Search", class:"btn btn-info" %>
-  <%= link_to "Create New Gift", new_post_path, class:"btn btn-rose mr-3"%>
 </div>
 <% end %>
+<div class="text-center">
 
+
+<%= link_to "Create New Gift", new_post_path, class:"btn btn-rose mb-4"%>
+</div>
 
 <% if @posts.present? %>
 
@@ -36,7 +39,6 @@
     <% end %>
 
 <% else %>
-  <h5 class="text-center"> Sorry, no Gifts have been posted.</h5>
-  <p class="text-center">Do you have a resource you would like to gift? Please click the button below to get started.</p>
-  <p class="text-center"><%= link_to "Post a Gift", new_post_path, class:"btn btn-info"%></p>
+  <h5 class="text-center mt-3"> Sorry, no Gifts have been posted.</h5>
+  <p class="text-center">Do you have a resource you would like to gift? Please click the Create New Gift button to get started.</p>
 <% end %>
