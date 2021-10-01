@@ -7,6 +7,7 @@ class Post < ApplicationRecord
     validates :description, presence: true
     validates_associated :user
 
+
     def self.search(search)
         if search
             where(" lower(title)  LIKE ?", "%#{search}%")
