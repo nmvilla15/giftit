@@ -3,8 +3,13 @@ class ConversationsController < ApplicationController
 
   def index
     @users = User.all
-    @conversations = Conversation.all
-    @conversations.check_empty_messages
+    Conversation.all.check_empty_messages
+    @conversations = []
+    Conversation.all.each do |conv|
+      if conv.sender_id == current_user.id || conv.recipient_id == current_user.id
+                @conversations.push(conv)
+        end
+    end
   end
 
   def create
@@ -26,5 +31,3 @@ class ConversationsController < ApplicationController
       params.permit(:sender_id, :recipient_id)
     end
 end
-
-              
