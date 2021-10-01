@@ -13,6 +13,8 @@
 
 <% if @posts.present? %>
 
+<%= will_paginate @posts, :page_links => false  %>
+
     <% @posts.each do |post| %>
         <div class="card mb-4 mx-auto shadow rounded" style="max-width: 960px;">
             <div class="row g-1">

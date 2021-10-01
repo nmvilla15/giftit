@@ -4,14 +4,16 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
+    # byebug
     if params.has_key?(:category)
       @category = Category.find_by_name(params[:category])
-      @posts = Post.where(category: @category)
+      @posts = Post.where(category: @category).paginate(:page => params[:page], :per_page => 5)
     elsif params.has_key?(:search)
-      @posts = Post.search(params[:search])
+      @posts = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 5)
     else
-      @posts = Post.all
+      @posts = Post.all.paginate(:page => params[:page], :per_page => 5)
     end
+
   end
 
   # GET /posts/1 or /posts/1.json
