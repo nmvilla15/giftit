@@ -5,4 +5,3 @@
 1. On your local machine, cd into the root folder of this repo in your terminal
 1. Run bundle install to install all the gems this project needs
 
-Ievgen Dotsenko :)
